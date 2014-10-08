@@ -43,11 +43,138 @@ function averageForLoop() {
     var args = Array.prototype.slice.apply(arguments, []);
     var sum = 0;
     var average = 0;
+    for (i = 0; i < args.length; i++) {
+        sum += args[i];
+    }
+    average = sum / args.length;
+    return average;
 
 }
 
+function averageForEach() {
+    var args = Array.prototype.slice.apply(arguments, []);
+    var sum = 0;
+    var average = 0;
+    args.forEach(function(num) {
+        sum += num;
+    })
+    average = sum / args.length;
+    return average;
+}
+
+function averageForEachCustom() {
+    "use strict";
+    var args = Array.prototype.slice.apply(arguments, []);
+    var sum = 0;
+    var average = 0;
+    forEach(args, function() {
+        sum += arguments[0];
+    })
+    average = sum / args.length;
+    return average;
+}
 
 // 3. find the largest number of the inputs
+function largestNumberForLoop() {
+    "use strict";
+    var args = Array.prototype.slice.apply(arguments, []);
+    var storeNum = 0;
+    for (var i = 0; i < args.length; i++) {
+        if (args[i] > storeNum) {
+            storeNum = args[i];
+        }
+    }
+    return storeNum;
+}
+
+function largestNumberForEach() {
+    var args = Array.prototype.slice.apply(arguments, []);
+    var storeNum = 0;
+    args.forEach(function(num) {
+        if (num > storeNum) {
+            storeNum = num;
+        }
+    })
+    return storeNum;
+}
+
+function largestNumberForEachCustom() {
+    var args = Array.prototype.slice.apply(arguments, []);
+    var storeNum = 0;
+    forEach(args, function() {
+        if (arguments[0] > storeNum) {
+            storeNum = arguments[0];
+        }
+    })
+    return storeNum;
+}
+
 // 4. find the longest string of the inputs
-// 5. given an array of Date() objects (Oct 4th 2014, Oct 3rd 2014, Sept 30th 2014, Sept 1st 2012, March 13th 2010), in that order, sort them chronologically.
-// Use http://devdocs.io/javascript/global_objects/date for reference on creating Date() objects with a specific date.
+function longestStringForLoop() {
+    var args = Array.prototype.slice.apply(arguments, []);
+    var storeString = "";
+    for (var i = 0; i < args.length; i++) {
+        if (args[i].length > storeString.length) {
+            storeString = args[i];
+        }
+    }
+    return storeString;
+}
+
+function longestStringForEach() {
+    var args = Array.prototype.slice.apply(arguments, []);
+    var storeString = "";
+    args.forEach(function(str) {
+        if (str.length > storeString.length) {
+            storeString = str;
+        }
+    })
+    return storeString;
+}
+
+function longestStringForEachCustom() {
+        var args = Array.prototype.slice.apply(arguments, []);
+        var storeString = "";
+        forEach(args, function() {
+            if (arguments[0].length > storeString.length) {
+                storeString = arguments[0];
+            }
+        })
+        return storeString;
+    }
+    // 5. given an array of Date() objects (Oct 4th 2014, Oct 3rd 2014, Sept 30th 2014, Sept 1st 2012, March 13th 2010), 
+    // in that order, sort them chronologically.     
+    // Use http://devdocs.io/javascript/global_objects/date for reference on creating Date() objects with a specific date.
+function dateChronForLoop() {
+    var args = Array.prototype.slice.apply(arguments, []);
+
+    for (var i = 0; i < args.length; i++) {
+
+    }
+}
+
+var numbers = [1, 12, 4, 18, 9, 7, 11, 3, 101, 5, 6];
+var strings = ["this", "is", "a", "collection", "of", "words"];
+var customers = [{
+    firstname: "Joe",
+    lastname: "Blogs"
+} {
+    firstname: "John",
+    lastname: "Smith"
+} {
+    firstname: "Dave",
+    lastname: "Jones"
+} {
+    firstname: "Jack",
+    lastname: "White"
+}];
+
+console.log(customers);
+
+var projections = customers.filter(function(c) { /**/ }).map(function(c) { /**/ }).sort(sortByName);
+
+function sortByName(c1, c2) {
+    "use strict";
+}
+
+console.log(projections);
